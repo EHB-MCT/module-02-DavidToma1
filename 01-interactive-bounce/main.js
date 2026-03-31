@@ -1,69 +1,61 @@
 let canvasElement = document.querySelector("#canvas");
 
 //1. Add variables needed for animating the ball
-let x = 100;
-let y = 100;
-
-//2. Add variables (size, speed, colorVal) for controlling the sketch
 let size = 50;
-let speed = 10;
+
 let colorval = "red";
 
-let speedX = speed;
-let directionX = 1;
+//2. Add variables (size, speed, colorVal) for controlling the sketch
+let x =  200;
+let y =  400;
 
-let directionY = 1;
-let speedY = speed;
+let speedX = 1;
+let directionX = -1;
+
+let speedY = 1;
+let directionY = -1;
 
 function setup() {
-    //Creating a canvas to draw on, using the existing canvas element.
-    createCanvas(600, 600, canvasElement);
-    noStroke();
+	//Creating a canvas to draw on, using the existing canvas element.
+	createCanvas(600, 600, canvasElement);
+	noStroke();
 }
 
 function draw() {
-    background(220);
+	background(255);
+	// 3.1 Animate position
+	x += speedX * directionX;
+	y += speedY * directionY;
+	// 3.2 Bounce logic: check the edges
+	if (x >= width || x < 0) {
+		directionX *= -1;
+	}
 
-    // 3.1 Animate position
-    x += speedX * directionX;
-    y += speedY * directionY;
-    // 3.2 Bounce logic: check the edges
-    if (x > width || x < 0) {
-        directionX *= -1;
-    }
-
-    if (y > height || y < 0) {
-        directionY *= -1;
-    }
-    // 3.3 Draw
-    fill(colorval);
-    circle(x, y, size);
+	if (y > height || y < 0) {
+		directionY *= -1;
+	}
+	// 3.3 Draw
+	fill(colorval);
+	circle(x, y, size);
 }
 
 // --- DOM Interaction ---
 
 // 4. Select the input elements
+
 let sizeInput = document.querySelector("#size-input");
 let speedInput = document.querySelector("#speed-input");
 let colorInput = document.querySelector("#color-input");
+
 // 5. Add Event Listeners; listen to the "input" event for real-time updates while dragging
 sizeInput.addEventListener("input", function () {
-    size = Number(sizeInput.value);
-});
-
-
-speedInput.addEventListener("input", function () {
-    speedX = Number(speedInput.value);
-    speedY = Number(speedInput.value);
+	size = Number(sizeInput.value);
 });
 
 speedInput.addEventListener("input", function () {
-    speedX = Number(speedInput.value);
-    speedY = Number(speedInput.value);
+	speedX = Number(speedInput.value);
+	speedY = Number(speedInput.value);
 });
-
-speedInput.addEventListener("input", function () {
-    speedX = Number(speedInput.value);
-    speedY = Number(speedInput.value);
+colorInput.addEventListener("input", function () {
+	colorval = colorInput.value;
 });
-
