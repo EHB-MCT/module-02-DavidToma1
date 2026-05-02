@@ -6,8 +6,8 @@ let size = 50;
 let colorval = "red";
 
 //2. Add variables (size, speed, colorVal) for controlling the sketch
-let x =  200;
-let y =  400;
+let x = 200;
+let y = 400;
 
 let speedX = 1;
 let directionX = -1;
@@ -47,7 +47,6 @@ let sizeInput = document.querySelector("#size-input");
 let speedInput = document.querySelector("#speed-input");
 let colorInput = document.querySelector("#color-input");
 
-// 5. Add Event Listeners; listen to the "input" event for real-time updates while dragging
 sizeInput.addEventListener("input", function () {
 	size = Number(sizeInput.value);
 });
@@ -56,6 +55,7 @@ speedInput.addEventListener("input", function () {
 	speedX = Number(speedInput.value);
 	speedY = Number(speedInput.value);
 });
+
 colorInput.addEventListener("input", function () {
 	colorval = colorInput.value;
 });

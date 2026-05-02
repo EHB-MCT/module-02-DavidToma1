@@ -1,29 +1,30 @@
 // 1. Setup Data: Array of Objects
 // We start with some dummy data to simulate existing reviews
 let reviews = [
-    {
-        name: "Mike Derycke",
-        rating: 5,
-        text: "Great course. Come study MCT at EHB!"
-    },
-    {
-        name: "P. Dickx",
-        rating: 2,
-        text: "I liked the orignal more."
-    },
-    {
-        name: "Student 1",
-        rating: 1,
-        text: "Hard."
-    }
+	{
+		name: "Mike Derycke",
+		rating: 5,
+		text: "Great course. Come study MCT at EHB!",
+	},
+	{
+		name: "P. Dickx",
+		rating: 2,
+		text: "I liked the orignal more.",
+	},
+	{
+		name: "Student 1",
+		rating: 1,
+		text: "Hard.",
+	},
 ];
 
 // 2. Select DOM Elements
-
+let view = document.querySelector("#reviews-container");
+let form = document.querySelector();
 // 3. Render Function
 // This function should render the reviews array, based on the template in the HTML file.
 function renderReviews() {
-    console.log("Render the reviews");
+	console.log("Render the reviews");
 }
 
 // 4. Initial Render
@@ -40,4 +41,3 @@ renderReviews();
 // 5.4 Re-render the list to show the new item
 
 // Optional: Clear the form fields
-
