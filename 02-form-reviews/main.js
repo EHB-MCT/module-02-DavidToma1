@@ -31,6 +31,9 @@ let form = document.querySelector("#review-form");
 function renderReviews() {
 	console.log("Render the reviews");
 	container.innerHTML = " ";
+	for (let i = 0; i < reviews.length; i++) {
+		let review = reviews[i];
+	}
 }
 
 // 4. Initial Render
