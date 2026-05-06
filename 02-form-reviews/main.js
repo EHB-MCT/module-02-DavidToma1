@@ -20,7 +20,7 @@ let reviews = [
 
 // 2. Select DOM Elements
 
-reviews = document.querySelector("#reviews-container");
+let container = document.querySelector("#reviews-container");
 let nameInput = document.querySelector("#name");
 let ratingInput = document.querySelector("#rating");
 let reviewInput = document.querySelector("#review");
