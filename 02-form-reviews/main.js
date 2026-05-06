@@ -19,12 +19,18 @@ let reviews = [
 ];
 
 // 2. Select DOM Elements
-let view = document.querySelector("#reviews-container");
-let form = document.querySelector();
+
+reviews = document.querySelector("#reviews-container");
+let nameInput = document.querySelector("#name");
+let ratingInput = document.querySelector("#rating");
+let reviewInput = document.querySelector("#review");
+let form = document.querySelector("#review-form");
+
 // 3. Render Function
 // This function should render the reviews array, based on the template in the HTML file.
 function renderReviews() {
 	console.log("Render the reviews");
+	container.innerHTML = " ";
 }
 
 // 4. Initial Render
