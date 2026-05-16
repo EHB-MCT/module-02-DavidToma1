@@ -29,8 +29,9 @@ let form = document.querySelector("#review-form");
 // 3. Render Function
 // This function should render the reviews array, based on the template in the HTML file.
 function renderReviews() {
+	let stars = "⭐".repeat(review.rating);
 	console.log("Render the reviews");
-	container.innerHTML = " ";
+	container.innerHTML = "";
 	for (let i = 0; i < reviews.length; i++) {
 		let review = reviews[i];
 		let reviewDiv = document.createElement("div");
@@ -57,13 +58,12 @@ renderReviews();
 form.addEventListener("submit", function (e) {
 	e.preventDefault();
 
-	let newReview = [
-		{
-			name: nameInput.value,
-			rating: Number(ratingInput.value),
-			text: reviewInput.value,
-		},
-	];
+	let newReview = {
+		name: nameInput.value,
+		rating: Number(ratingInput.value),
+		text: reviewInput.value,
+	};
+
 	reviews.push(newReview);
 	renderReviews();
 
