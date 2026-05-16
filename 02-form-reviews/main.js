@@ -33,6 +33,18 @@ function renderReviews() {
 	container.innerHTML = " ";
 	for (let i = 0; i < reviews.length; i++) {
 		let review = reviews[i];
+		let reviewDiv = document.createElement("div");
+		reviewDiv.classList.add("review-item");
+
+		reviewDiv.innerHTML = `
+			<div class="review-header">
+				<span class="review-name">${review.name}</span>
+				<span class="review-rating">${stars}</span>
+			</div>
+			<p class="review-text">${review.text}</p>
+		`;
+
+		container.appendChild(reviewDiv);
 	}
 }
 
@@ -41,6 +53,10 @@ function renderReviews() {
 renderReviews();
 
 // 5. Handle Form Submission
+
+form.addEventListener("submit", function (e) {
+	e.preventDefault();
+});
 // 5.1 Stop the page from reloading!
 
 // 5.2 Create a new object from input values
