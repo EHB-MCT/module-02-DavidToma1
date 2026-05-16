@@ -56,13 +56,18 @@ renderReviews();
 
 form.addEventListener("submit", function (e) {
 	e.preventDefault();
+
+	let newReview = [
+		{
+			name: nameInput.value,
+			rating: Number(ratingInput.value),
+			text: reviewInput.value,
+		},
+	];
+	reviews.push(newReview);
+	renderReviews();
+
+	nameInput.value = "";
+	ratingInput.value = "";
+	reviewInput.value = "";
 });
-// 5.1 Stop the page from reloading!
-
-// 5.2 Create a new object from input values
-
-// 5.3 Add (push) the new object to our data array
-
-// 5.4 Re-render the list to show the new item
-
-// Optional: Clear the form fields
